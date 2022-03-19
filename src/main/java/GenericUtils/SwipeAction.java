@@ -1,8 +1,32 @@
 package GenericUtils;
 
 import java.util.HashMap;
-import io.appium.java_client.*;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 public class SwipeAction {
+	
+	 WebDriver driver;
+	 
+//   Here Direction is just a Variable which has only one value among all those 
+//	 That is the purpose of enum
+	 
+	 public enum Direction {
+	        LEFT,
+	        RIGHT,
+	        UP,
+	        DOWN,
+	        VERTICAL,
+	        HORIZONTAL,
+	        VERTICAL_DOWN_FIRST,
+	        HORIZONTAL_RIGHT_FIRST
+	    }
+
+	    public enum Zoom {
+	        IN,
+	        OUT
+	    }
+
 	
 	/**
 	 * Performs screen scroll
@@ -36,7 +60,7 @@ public class SwipeAction {
 	            throw new IllegalArgumentException("mobileScrollIOS(): dir: '" + dir + "' NOT supported");
 	    }
 	    try {
-	        driver.executeScript("mobile:scroll", scrollObject); // swipe faster then scroll
+	        ((JavascriptExecutor) driver).executeScript("mobile:scroll", scrollObject); // swipe faster then scroll
 	        Thread.sleep(ANIMATION_TIME); // always allow swipe action to complete
 	    } catch (Exception e) {
 	        System.err.println("mobileScrollIOS(): FAILED\n" + e.getMessage());
@@ -76,11 +100,12 @@ public class SwipeAction {
 	            throw new IllegalArgumentException("mobileSwipeScreenIOS(): dir: '" + dir + "' NOT supported");
 	    }
 	    try {
-	        driver.executeScript("mobile:swipe", scrollObject);
+	        ((JavascriptExecutor) driver).executeScript("mobile:swipe", scrollObject);
 	        Thread.sleep(ANIMATION_TIME); // always allow swipe action to complete
 	    } catch (Exception e) {
 	        System.err.println("mobileSwipeScreenIOS(): FAILED\n" + e.getMessage());
 	        return;
 	    }
-	}	
+	}
+	
 }

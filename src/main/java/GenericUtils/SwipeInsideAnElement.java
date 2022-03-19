@@ -1,27 +1,40 @@
-iOS 'mobile:': Element swipe
-To swipe inside of an element you need to add the id of this element into swipe methods.
 package GenericUtils;
+
+/* iOS 'mobile:': Element swipe
+ To swipe inside of an element you need to add the id of this element into swipe methods.
+ */
 
 import java.util.HashMap;
 
-import org.w3c.dom.Element;
+import org.testng.annotations.Test;
+
+//this import statement
+import com.qaprosoft.carina.core.foundation.utils.mobile.IMobileUtils.Direction;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 
 public class SwipeInsideAnElement {
+	
+	static AndroidDriver<AndroidElement> driver;
 
-	// find element to swipe inside
-	MobileElement el = (MobileElement) driver.findElement(MobileBy.id("my_id"));
-
-	// execute scroll
-	mobileScrollElementIOS(el, Direction.RIGHT);
-	mobileScrollElementIOS(el, Direction.LEFT);
-
-	// execute swipe
-	// !remember! to execute swipe in same direction as scroll use reverse direction
-	mobileSwipeElementIOS(el, Direction.LEFT);
-	mobileSwipeElementIOS(el, Direction.RIGHT);
+	@Test
+	public void test() {
+		
+		// find element to swipe inside
+		MobileElement el = (MobileElement) driver.findElement(MobileBy.id("my_id"));
+		
+		// execute scroll
+		mobileScrollElementIOS(el, Direction.RIGHT);
+		mobileScrollElementIOS(el, Direction.LEFT);
+		
+		// execute swipe
+		// !remember! to execute swipe in same direction as scroll use reverse direction
+		mobileSwipeElementIOS(el, Direction.LEFT);
+		mobileSwipeElementIOS(el, Direction.RIGHT);
+	}
 
 	/**
 	 * Performs scroll inside element
