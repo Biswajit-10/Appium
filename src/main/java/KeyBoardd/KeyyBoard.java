@@ -1,5 +1,6 @@
-package GenericUtilsNew;
+package KeyBoardd;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import io.appium.java_client.MobileDriver;
@@ -34,5 +35,7 @@ public class KeyyBoard {
 		  return false;
 	}
 	
-	
+	public void hid() {
+        ((IOSDriver<WebElement>)driver).getKeyboard().pressKey(Keys.valueOf("good morning")); 
+}
 }
