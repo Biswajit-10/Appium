@@ -23,6 +23,7 @@ public class Touch_Action {
 		MobileElement tap=(MobileElement)driver.findElementByXPath("");
 		action.tap(tapOptions().withElement(ElementOption.element(tap))).perform();
 		
+	
 	}
 
 }
