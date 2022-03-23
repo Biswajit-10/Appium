@@ -16,17 +16,19 @@ public class BaseAnnotationClass {
 	
 	@BeforeClass
 	public void configBc() throws IOException {
+//		start server
+//		capabilities
 	}
 	@BeforeMethod
 	public void configBm() throws IOException {
-		
+//		login
 	}
 	@AfterMethod
 	public void configAm() throws IOException {
-		
+//		logout
 	}
 	@AfterClass
 	public void configAc() {
-		
+//		stop server
 	}
 }
