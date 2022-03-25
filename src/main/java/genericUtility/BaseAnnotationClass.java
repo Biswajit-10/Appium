@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeMethod;
 public class BaseAnnotationClass {
 	
 	
-//	public WebDriverUtility  wlib=new WebDriverUtility();
+	public WebDriverUtility  wlib=new WebDriverUtility();
 	public WebDriver driver;
 	
 	@BeforeClass
@@ -26,6 +26,7 @@ public class BaseAnnotationClass {
 	@AfterMethod
 	public void configAm() throws IOException {
 //		logout
+//		use assertAll in the last statement 
 	}
 	@AfterClass
 	public void configAc() {
