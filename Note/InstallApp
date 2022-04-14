@@ -1,0 +1,22 @@
+public class InstallApp {
+	
+	public static AppiumDriver<MobileElement> driver;
+	
+	public static AppiumDriver<MobileElement> capabilities() throws Exception {
+		DesiredCapabilities capabilities=new DesiredCapabilities();
+		capabilities.setCapability("udid", "192.168.1.104:5555");
+		capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability("app", "C:\\Users\\Biswajit\\Downloads\\AppiumFramework\\AppiumFramework\\src\\test\\resources\\app\\Android.SauceLabs.Mobile.Sample.app.2.7.1.apk");
+		capabilities.setCapability("platformVersion", "9");
+		capabilities.setCapability("automationName", "UiAutomator2");
+		URL url=new URL("http://127.0.0.1:4723/wd/hub");
+		driver=new AppiumDriver<MobileElement>(url, capabilities);
+		return driver;
+	}
+	
+	public static void main(String[] args) throws Exception {
+		capabilities();
+	}
+	
+	
+}
