@@ -1,5 +1,7 @@
 public class InstallApp {
 	
+	/*	It will install application every time	*/	
+	
 	public static AppiumDriver<MobileElement> driver;
 	
 	public static AppiumDriver<MobileElement> capabilities() throws Exception {
