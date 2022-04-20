@@ -1,0 +1,9 @@
+public static String className = this.getClass().getSimpleName();
+
+
+public void configBm(ITestResult result) throws Throwable  {
+		public String currentRunningMethod=result.getMethod().getMethodName();
+    }
+    
+    
+    
