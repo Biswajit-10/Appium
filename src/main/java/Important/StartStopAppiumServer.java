@@ -2,7 +2,7 @@ package Important;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 
-public class StartAppiumServer {
+public class StartStopAppiumServer {
 
 	public static void main(String[] args) {
 
@@ -10,6 +10,9 @@ public class StartAppiumServer {
 
 		service = AppiumDriverLocalService.buildDefaultService();
 		service.start();
-
+		CheckIfServerIsRunning.main(null);
+		service.stop();
+		CheckIfServerIsRunning.main(null);
+		
 	}
 }
